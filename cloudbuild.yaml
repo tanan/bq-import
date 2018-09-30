@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['get', "github.com/tanan/bq-import/config"]
+  env: ['PROJECT_ROOT=bq-import']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', '.']
+  env: ['PROJECT_ROOT=bq-import']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['build', '-o', 'bq-import', 'main.go']
+  env: ['PROJECT_ROOT=bq-import']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['-m', 'cp', 'bq-import', 'gs://anan-buildstorage/bq-import/']
