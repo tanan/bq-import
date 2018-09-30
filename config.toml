@@ -1,0 +1,9 @@
+[application]
+secret_file="~/.config/gcloud/key/bq-import.json"
+
+[database]
+host="localhost"
+port="5432"
+schema="test"
+user="root"
+pass="test"
