@@ -15,11 +15,12 @@ type AppConfig struct {
 }
 
 type DBConfig struct {
-	Host   string
-	Port   int
-	Schema string
-	User   string
-	Pass   string
+	SQLType string `toml:"sql_type"`
+	Host    string `toml:"host"`
+	Port    int    `toml:"port"`
+	Schema  string `toml:"schema"`
+	User    string `toml:"user"`
+	Pass    string `toml:"pass"`
 }
 
 func (config DBConfig) GetConnInfo() string {

@@ -2,8 +2,9 @@
 secret_file="~/.config/gcloud/key/bq-import.json"
 
 [database]
+sql_type="postgres"
 host="localhost"
-port="5432"
-schema="test"
-user="root"
-pass="test"
+port=5432
+schema="postgres"
+user="postgres"
+pass="postgres"
